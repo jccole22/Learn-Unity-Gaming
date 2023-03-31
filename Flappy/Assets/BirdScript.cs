@@ -22,7 +22,13 @@ public class BirdScript : MonoBehaviour
         {
             //Vector2.up is same
             body.velocity = new Vector2(0, 1) * jumpSpeed;
-        }    
+        }
+        
+        if (transform.position.y > 8 || transform.position.y < -8)
+        {
+            logic.GameOver();
+            birdIsAlive = false;
+        }
         
     }
 
